@@ -73,7 +73,6 @@ export const Home = () => {
   };
 
   const handleFormFailed = () => {
-    // message.warning('Form validation failed');
     messageApi.open({
       type: 'warning',
       content: 'Form validation failed',
@@ -196,7 +195,7 @@ export const Home = () => {
         {responseState?.responseData.periods && (
           <>
             {responseState?.responseData.periods.map((period) => (
-              <Col xs={24} md={6} key={period.number}>
+              <Col xs={24} md={8} key={period.number}>
                 <PeriodCard data={period} />
               </Col>
             ))}
