@@ -1,0 +1,82 @@
+// RESET
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-image: url('../assets/img/weather.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+// DEBUG MODE
+.debug {
+  outline-style: dotted;
+  outline-color: red;
+  outline-width: 1px;
+  * {
+    // background-color: rgba(255, 0, 0, 0.1);
+    outline-style: dotted;
+    outline-color: red;
+    outline-width: 1px;
+  }
+}
+
+.mainContainer {
+  width: min(1400px, 90%);
+  margin: 1rem auto 1rem auto;
+}
+
+.glass {
+  background: rgba(0, 255, 179, 0.205);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.842);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.308);
+}
+
+.card {
+  @extend .glass;
+  color: '#fff';
+  opacity: 0.9;
+
+  div,
+  p,
+  h1,
+  h2,
+  h3 {
+    color: white;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-align: center;
+    font-size: 1.2rem;
+
+    @media (min-width: 400px) {
+      font-size: 2rem;
+    }
+  }
+
+  .icon {
+    border: solid 3px #ffffff5b;
+    border-radius: 100%;
+    width: 50px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+}

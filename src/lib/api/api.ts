@@ -7,7 +7,7 @@ const getForecast = async (address: AddressDTO) => {
     `/v1/weatherforecast/?${queryParams}`
   );
 
-  return resp.data;
+  return resp;
 };
 
 export const api = {
