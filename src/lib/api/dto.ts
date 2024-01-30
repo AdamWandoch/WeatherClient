@@ -6,9 +6,11 @@ export interface AddressDTO {
   ZipCode: number;
 }
 
+type Dictionary = { [key: string]: string[] };
+
 export interface ResponseDTO<T> {
   responseData: T;
-  errors: any;
+  errors: Dictionary;
 }
 
 export interface WeatherForecastDTO {
