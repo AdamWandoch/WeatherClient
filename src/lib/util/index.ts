@@ -9,11 +9,19 @@ export const handleErrorStatus = (
 ) => {
   console.log(errorObj);
 
-  if (status === HttpStatusCode.InternalServerError)
-    message.error('Internal server error');
-  else {
-    const msgs = getPropertiesAndValues(errorObj);
-    message.warning(msgs.join('\n\n'), 7);
+  switch (status) {
+    case HttpStatusCode.InternalServerError:
+      message.error('Internal server error');
+      break;
+    case HttpStatusCode.Unauthorized:
+      message.error('API access denied');
+      break;
+    case HttpStatusCode.UnprocessableEntity:
+      const msgs = getPropertiesAndValues(errorObj);
+      message.warning(msgs.join('\n\n'), 7);
+      break;
+    default:
+      break;
   }
 };
 

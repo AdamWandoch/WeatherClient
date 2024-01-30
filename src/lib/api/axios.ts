@@ -1,4 +1,8 @@
-import axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
+import axios, {
+  AxiosInstance,
+  AxiosRequestConfig,
+  HttpStatusCode,
+} from 'axios';
 import { handleErrorStatus } from '../util';
 
 const API = {
@@ -23,10 +27,17 @@ axiosInstance.interceptors.request.use((config) => {
   return config;
 });
 
+export const handledErrorCodes = [
+  HttpStatusCode.UnprocessableEntity,
+  HttpStatusCode.InternalServerError,
+  HttpStatusCode.Unauthorized,
+];
+
 axiosInstance.interceptors.response.use(
   (response) => response,
   (error) => {
-    if (error.response.status === 422 || error.response.status === 500) {
+    // if (error.response.status === 422 || error.response.status === 500) {
+    if (handledErrorCodes.includes(error.response.status)) {
       handleErrorStatus(error.response.data.errors, error.response.status);
     }
   }
