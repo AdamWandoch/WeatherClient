@@ -20,14 +20,6 @@ import {
 } from 'antd';
 import { useState } from 'react';
 
-const initialValues = {
-  number: 608,
-  street: 'Montana Ave',
-  city: 'Santa Monica',
-  state: 'CA',
-  zipCode: 90403,
-};
-
 const toolTipProps: TooltipProps = {
   trigger: 'focus',
   placement: 'topLeft',
@@ -87,7 +79,6 @@ export const Home = () => {
         <Col sm={24} style={{ width: '100%' }}>
           <Card title='Weather forecast - addres search'>
             <Form
-              initialValues={initialValues}
               id='form'
               className='form'
               name='form'
