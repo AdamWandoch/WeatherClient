@@ -33,13 +33,13 @@ export const Home = () => {
   const [form] = Form.useForm();
   const [messageApi, contextHolder] = message.useMessage();
 
-  const handleFormSubmit = async (values: any) => {
+  const handleFormSubmit = async (values: AddressDTO) => {
     const dto: AddressDTO = {
-      Number: values.number,
-      Street: values.street,
-      City: values.city,
-      State: values.state.toUpperCase(),
-      ZipCode: values.zipCode,
+      Number: values.Number,
+      Street: values.Street,
+      City: values.City,
+      State: values.State.toUpperCase(),
+      ZipCode: values.ZipCode,
     };
 
     setResponseState(undefined);
@@ -91,7 +91,7 @@ export const Home = () => {
                 <Tooltip {...toolTipProps} title='House number'>
                   <Col xs={6} md={2}>
                     <Form.Item
-                      name={'number'}
+                      name={'Number'}
                       rules={[
                         {
                           required: true,
@@ -106,7 +106,7 @@ export const Home = () => {
                 <Tooltip {...toolTipProps} title='Street name'>
                   <Col xs={18} md={5}>
                     <Form.Item
-                      name={'street'}
+                      name={'Street'}
                       rules={[
                         {
                           required: true,
@@ -121,7 +121,7 @@ export const Home = () => {
                 <Tooltip {...toolTipProps} title='City / town'>
                   <Col xs={10} md={4}>
                     <Form.Item
-                      name={'city'}
+                      name={'City'}
                       rules={[
                         {
                           required: true,
@@ -136,7 +136,7 @@ export const Home = () => {
                 <Tooltip {...toolTipProps} title='State'>
                   <Col xs={4} md={2}>
                     <Form.Item
-                      name={'state'}
+                      name={'State'}
                       rules={[
                         {
                           required: true,
@@ -151,7 +151,7 @@ export const Home = () => {
                 <Tooltip {...toolTipProps} title='ZIP code'>
                   <Col xs={10} md={4}>
                     <Form.Item
-                      name={'zipCode'}
+                      name={'ZipCode'}
                       rules={[
                         {
                           required: true,
