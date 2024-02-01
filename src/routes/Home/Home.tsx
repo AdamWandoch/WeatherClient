@@ -38,7 +38,7 @@ export const Home = () => {
       Number: values.number,
       Street: values.street,
       City: values.city,
-      State: values.state,
+      State: values.state.toUpperCase(),
       ZipCode: values.zipCode,
     };
 
